@@ -1,9 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Xamarin.XMBindingLibrarySample/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Xamarin.XMBindingLibrarySample/ViewControllers/CustomViewController.cs">
     <Files>
-      <File FileName="Xamarin.XMBindingLibrarySample/AppDelegate.cs" Line="45" Column="53" />
+      <File FileName="Xamarin.XMBindingLibrarySample/AppDelegate.cs" Line="41" Column="1" />
+      <File FileName="Xamarin.XMBindingLibrarySample/ViewControllers/CustomViewController.cs" Line="9" Column="4" />
+      <File FileName="Xamarin.XMBindingLibrarySample/ViewControllers/UtilitiesViewController.cs" Line="77" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Xamarin.XMBindingLibrarySample" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="ViewControllers" expanded="True">
+              <Node name="CustomViewController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
