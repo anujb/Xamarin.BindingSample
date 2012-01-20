@@ -11,9 +11,9 @@ Using this Sample
 
 This sample consists of three distinct source projects:
 
--XCode Project in Objective-C
--MonoTouch Binding classes
--MonoTouch Sample Project
+- XCode Project in Objective-C
+- MonoTouch Binding classes
+- MonoTouch Sample Project
 
 To compile the binding classes execute the following commands from the root directory:
 
