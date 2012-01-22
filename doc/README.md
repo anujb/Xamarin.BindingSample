@@ -7,27 +7,38 @@ This example shows how we can utilize an existing Objective-C library and expose
 - Defining an API definition file in the form of a C# interface against the Objective-C API.
 - Building a ```*.dll``` that contains both the binding and and the embedded native library.
 
-
 Understanding this Sample
 ======================
 
 This sample consists of three distinct source projects:
 
-- XCode Project in Objective-C
+- Xcode Project in Objective-C
 - MonoTouch Binding classes
 - MonoTouch Sample Project
 
-To compile the binding classes execute the following commands from the root directory:
+Please see the README in each project folder for more details.
 
-- ```cd src/binding/```
-- ```make```
-
-The make command will execute the Makefile and create a XMBindingLibrary.dll in the binding directory. This .dll is created using the new ```LinkWithAttribute``` and will automatically embed the native library in your application.
-
-How to Create a Universal Binary
+Building this Sample
 ======================
 
-In order to understand how we've build a universal binary, open up the XCode XMBindingLibrarySample project. In this project we have created an additional ```Build Target```. This allows us to create a separate library in the Products folder of the source tree. In our Universal Build Target we have supplemented our build output with a post-build ```Run Script``` which allows us to ```lipo``` or create a "fat" multi-architecture library without affecting any of the individual libraries from standard build output.
+To compile the Xcode Project and binding classes execute the ```make``` command from the root directory.
+
+The make command will:
+
+- Compile the XCode Project for ARM6, ARM7, and Simulator
+- Create a multi-architecture binary using ```lipo```
+- Create a *.dll in the binding folder using btouch
+
+ The resulting .dll is created using the [LinkWithAttribute] (http://docs.xamarin.com/ios/advanced_topics/binding_objective-c_types#Linking_the_Dependencies) and will automatically embed the native library in your application.
+
+Creating a Universal Binary
+======================
+
+A "fat" or multi-architecture library is a compiled binary that is usable on multiple targets, for example: armv6, armv7, i386 (simulator). In this sample we illustrate how to create a universal binary in two ways:
+
+1. Compiling the Xcode project using XBuild for each architecture, then executing ```lipo``` to create a "universal" file from the architecture specific inputs. For instance, in our make script we have ```lipo -create -output $@ $^``` which will take the libraries compiled for armv6, armv7, and i386 and output them to the current directory.
+
+2. Creating a separate ```Build Target``` in our Xcode project that execute a post build ```Run Script``` to output a "universal" file. This Run Script is available in the "Post-Build Run Script" group of our Xcode project.
 
 ![screenshot](http://i.imgur.com/6SIsx.png "Build Target - Run Script")
 

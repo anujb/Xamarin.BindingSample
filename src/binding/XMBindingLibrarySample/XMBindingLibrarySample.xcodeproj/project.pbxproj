@@ -29,6 +29,7 @@
 		1D09B81314C87E5F00033666 /* XMBindingLibrarySampleUniversal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMBindingLibrarySampleUniversal-Prefix.pch"; sourceTree = "<group>"; };
 		1D09B81414C87E5F00033666 /* XMBindingLibrarySampleUniversal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMBindingLibrarySampleUniversal.h; sourceTree = "<group>"; };
 		1D09B81514C87E5F00033666 /* XMBindingLibrarySampleUniversal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMBindingLibrarySampleUniversal.m; sourceTree = "<group>"; };
+		1D22C39B14CBA7A80000024A /* RunScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunScript.sh; sourceTree = "<group>"; };
 		1DE6534E14C7C824007670AC /* libXMBindingLibrarySample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXMBindingLibrarySample.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE6535114C7C824007670AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DE6535514C7C824007670AC /* XMBindingLibrarySample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMBindingLibrarySample-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,9 +86,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1D22C39914CBA7800000024A /* Post-Build Run Script */ = {
+			isa = PBXGroup;
+			children = (
+				1D22C39B14CBA7A80000024A /* RunScript.sh */,
+			);
+			name = "Post-Build Run Script";
+			sourceTree = "<group>";
+		};
 		1DE6534314C7C824007670AC = {
 			isa = PBXGroup;
 			children = (
+				1D22C39914CBA7800000024A /* Post-Build Run Script */,
 				1DE6535E14C7C87F007670AC /* Classes */,
 				1DE6535314C7C824007670AC /* XMBindingLibrarySample */,
 				1D09B81114C87E5F00033666 /* XMBindingLibrarySampleUniversal */,
@@ -379,6 +389,7 @@
 				1D09B81814C87E5F00033666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DE6534814C7C824007670AC /* Build configuration list for PBXProject "XMBindingLibrarySample" */ = {
 			isa = XCConfigurationList;
