@@ -1,12 +1,14 @@
 MonoTouch BTouch Binding Sample
 ================
 
-The new btouch tool for MonoTouch (and bmac for MonoMac) simplifies binding an Objective-C API and does the heavy lifting for you: registering the selectors, taking care of invoking the proper handle for overwritten classes, doing parameter checking and doing some of the common marshaling required for your project.
+This example shows how we can utilize an existing Objective-C library and expose it for use in a MonoTouch project. For instance, you may have existing code written in Objective-C that you may want to bind to C# to consume in your MonoTouch project. This sample provides a basic template/overview of the steps involved, including:
 
-In this sample we'll go through the use case of binding a static Objective-C library for use in a MonoTouch application.
+- Creating a "fat" or multi-architecture library that can be target both the iOS simulator and device.
+- Defining an API definition file in the form of a C# interface against the Objective-C API.
+- Building a ```*.dll``` that contains both the binding and and the embedded native library.
 
 
-Using this Sample
+Understanding this Sample
 ======================
 
 This sample consists of three distinct source projects:
