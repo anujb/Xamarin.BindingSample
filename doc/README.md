@@ -36,13 +36,22 @@ Creating a Universal Binary
 
 A "fat" or multi-architecture library is a compiled binary that is usable on multiple targets, for example: armv6, armv7, i386 (simulator). In this sample we illustrate how to create a universal binary in two ways:
 
-1. Compiling the Xcode project using XBuild for each architecture, then executing ```lipo``` to create a "universal" file from the architecture specific inputs. For instance, in our make script we have ```lipo -create -output $@ $^``` which will take the libraries compiled for armv6, armv7, and i386 and output them to the current directory.
+## Using ```lipo```
 
-2. Creating a separate ```Build Target``` in our Xcode project that execute a post build ```Run Script``` to output a "universal" file. This Run Script is available in the "Post-Build Run Script" group of our Xcode project.
+Once we have built our library against the desired architectures we can create the universal binary via ```lipo```. This will create a "universal" file from the architecture specific inputs we have provided. For instance:
+
+	lipo -create libXMBindingLibrarySample-armv7.a libXMBindingLibrarySample-armv6.a libXMBindingLibrarySample-i386.a -output libXMBindingLibrarySampleUniversal.a
+
+ Similarly, in our Makefile script we have ```lipo -create -output $@ $^``` which will take the libraries compiled for armv6, armv7, and i386 using xbuild and output them to the current directory with the name of our build target.
+
+
+## Using Xcode
+
+In our Xcode project we have created a separate ```Build Target``` that will execute a post build ```Run Script``` to output a "universal" file. 
 
 ![screenshot](http://i.imgur.com/6SIsx.png "Build Target - Run Script")
 
-
+This Run Script is also available for reference in the "Post-Build Run Script" group of the Xcode project.
 
 
 
